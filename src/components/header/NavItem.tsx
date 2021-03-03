@@ -9,13 +9,14 @@ import styled from 'styled-components';
 type TSProps = {
     active:string,
     children:string,
-	theme:string
+	theme:string,
+    view:string,
 }
 
 const NavItem:FunctionComponent<TSProps> = (props) => {
 
 	return (
-		<NavItemContainer>
+		<NavItemContainer active={props.active} view={props.view}>
             { props.children }
 		</NavItemContainer>
 	)
@@ -24,10 +25,10 @@ const NavItem:FunctionComponent<TSProps> = (props) => {
 // STYLED COMPONENTS //
 const NavItemContainer = styled.div((props) => ({
     color: props.active ? props.theme.brand : '#6A6F71',
-    fontSize:18,
+    fontSize:16,
     margin:'0px 12px',
     fontWeight: props.active ? 700:400,
-    paddingTop:props.active? 8 : 5,
+    paddingTop:7,
     borderBottom:'2px solid',
     borderColor: props.active ? props.brand:'transparent',
     height:'100%',

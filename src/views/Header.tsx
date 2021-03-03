@@ -25,10 +25,10 @@ const Header:FunctionComponent<TSProps> = (props) => {
                 InsuranceNow
             </Branding>
             <Navigation>
-                <NavItem active={props.view == 'home'}>Home</NavItem>
-                <NavItem active={props.view == 'policy'}>Quote/Policy</NavItem>
-                <NavItem active={props.view == 'cabinets'}>Cabinets</NavItem>
-                <NavItem active={props.view == 'support'}>Support</NavItem>
+                <NavItem view={props.view} active={props.view == 'home'}>Home</NavItem>
+                <NavItem view={props.view} active={props.view == 'policy'}>Quote/Policy</NavItem>
+                <NavItem view={props.view} active={props.view == 'cabinets'}>Cabinets</NavItem>
+                <NavItem view={props.view} active={props.view == 'support'}>Support</NavItem>
             </Navigation>
             <Profile />
         </HeaderContainer>
@@ -52,8 +52,13 @@ const Branding = styled.div((props) => ({
     display:'flex',
     justifyContent:'flex-start',
     alignItems:'center',
-    fontSize:22,
+    fontSize:20,
     color:props.theme.brand
+}));
+const Logo = styled.svg((props) => ({
+    height: 28,
+    fill: props.theme.brand,
+    marginRight:10,
 }));
 const Navigation = styled.div((props) => ({
     position:'absolute',
@@ -63,11 +68,6 @@ const Navigation = styled.div((props) => ({
     alignItems:'center',
     zIndex:0,
     height:60,
-}));
-const Logo = styled.svg((props) => ({
-    height: 30,
-    fill: props.theme.brand,
-    marginRight:10,
 }));
 
 
