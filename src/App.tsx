@@ -27,7 +27,7 @@ const App:FunctionComponent<TSProps> = (props) => {
         case 'policy':
             return (
                 <ThemeProvider theme={props.theme}>
-					<Header/>
+					<Header view={props.view}/>
                     <Sidebar />
                     <Content>
                         <Policy />
@@ -37,7 +37,7 @@ const App:FunctionComponent<TSProps> = (props) => {
         default:
             return (
                 <ThemeProvider theme={props.theme}>
-					<Header/>
+					<Header view={props.view}/>
                     <Sidebar />
                     <Content>
                         No idea how you made it here!
