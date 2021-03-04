@@ -16,7 +16,7 @@ type TSProps = {
 const NavItem:FunctionComponent<TSProps> = (props) => {
 
 	return (
-		<NavItemContainer active={props.active} view={props.view}>
+		<NavItemContainer tabIndex={1} active={props.active} view={props.view}>
             { props.children }
 		</NavItemContainer>
 	)
@@ -26,6 +26,7 @@ const NavItem:FunctionComponent<TSProps> = (props) => {
 const NavItemContainer = styled.div((props) => ({
     color: props.active ? props.theme.brand : '#6A6F71',
     fontSize:16,
+    outline:0,
     margin:'0px 12px',
     fontWeight: props.active ? 700:400,
     paddingTop:7,
@@ -40,6 +41,9 @@ const NavItemContainer = styled.div((props) => ({
     cursor:'pointer',
     transition:'color .2s ease-in-out',
     ':hover':{
+        color: props.theme.brand
+    },
+    ':focus':{
         color: props.theme.brand
     }
 }));

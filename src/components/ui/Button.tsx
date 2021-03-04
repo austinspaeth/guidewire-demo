@@ -18,7 +18,7 @@ const Button:FunctionComponent<TSProps> = (props) => {
 	const [ui, setUi] = useState();
 
 	return (
-		<ButtonContainer fontSize={props.fontSize}>
+		<ButtonContainer tabIndex={1} fontSize={props.fontSize}>
             {props.children}
 		</ButtonContainer>
 	)
