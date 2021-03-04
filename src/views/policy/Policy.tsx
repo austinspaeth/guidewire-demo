@@ -43,10 +43,17 @@ const Row = styled.div({
     alignItems:'flex-start'
 });
 const LeftColumn = styled.div({
-    width: 'calc(100% - 270px)'
+    width: 'calc(100% - 270px)',
+    '@media(max-width:1000px)':{
+        width:'100%',
+    }
 });
 const RightColumn = styled.div({
     width: 250,
+    '@media(max-width:1000px)':{
+        width:0,
+        display:'none',
+    }
 });
 
 // REDUX MAPPING //

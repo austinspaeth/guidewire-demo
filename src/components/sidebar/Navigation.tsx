@@ -6,67 +6,12 @@ import { connect } from "react-redux";
 // COMPONENTS //
 import styled from 'styled-components';
 
-type TSProps = {
-	theme:string
-}
+// DATA //
+import { navOptions } from '../../assets/mockData/navOptions';
 
-const navOptions = [
-    {
-        displayTitle: 'History'
-    },
-    {
-        displayTitle: 'Policy',
-        active: true,
-        children: [
-            {
-                displayTitle: 'Policy',
-                active:true
-            },
-            {
-                displayTitle: 'Underwriting'
-            },
-            {
-                displayTitle: 'Dwelling'
-            },
-            {
-                displayTitle: 'Coverages'
-            },
-            {
-                displayTitle: 'Review'
-            },
-            {
-                displayTitle: 'Loss History'
-            },
-            {
-                displayTitle: 'Additional Interests'
-            },
-            {
-                displayTitle: 'Forms'
-            },
-            {
-                displayTitle: 'Inspections'
-            }
-        ]
-    },
-    {
-        displayTitle: 'Policy File'
-    },
-    {
-        displayTitle: 'Correspondence'
-    },
-    {
-        displayTitle: 'Tasks'
-    },
-    {
-        displayTitle: 'Reports'
-    },
-    {
-        displayTitle: 'Billing'
-    },
-    {
-        displayTitle: 'eSignature'
-    }
-]
+type TSProps = {
+	theme:string,
+}
 
 const Navigation:FunctionComponent<TSProps> = (props) => {
 
@@ -111,7 +56,12 @@ const TopLevelOption = styled.div((props) => ({
     fontSize:16,
     fontWeight: props.active ? 700 : 300,
     position:'relative',
-    color: props.active ? props.theme.brand : props.theme.darkText
+    color: props.active ? props.theme.brand : props.theme.darkText,
+    cursor:'pointer',
+    transition:'color .2s ease-in-out',
+    ':hover':{
+        color: props.theme.brand
+    }
 }));
 const SubLevelOption = styled.div((props) => ({
     width:'calc(100% + 40px)',
@@ -126,7 +76,12 @@ const SubLevelOption = styled.div((props) => ({
     fontWeight: props.active ? 700 : 300,
     paddingLeft: props.active ? 36 : 40,
     borderLeft: props.active ? '4px solid' : '0px none',
-    borderColor: props.theme.brand
+    borderColor: props.theme.brand,
+    cursor:'pointer',
+    transition:'color .2s ease-in-out',
+    ':hover':{
+        color: props.theme.brand
+    }
 }));
 const Carat = styled.svg((props) => ({
     width:7,

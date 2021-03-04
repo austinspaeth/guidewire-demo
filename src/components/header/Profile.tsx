@@ -28,12 +28,16 @@ const ProfileContainer = styled.div((props) => ({
     display:'flex',
     justifyContent:'flex-end',
     alignItems:'center',
+    cursor:'pointer'
 }));
 const UserMeta = styled.div((props) => ({
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'flex-end',
+    '@media(max-width:750px)':{
+        display:'none'
+    }
 }));
 const Company = styled.div((props) => ({
     color:props.theme.lightText,

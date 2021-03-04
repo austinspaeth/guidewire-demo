@@ -17,10 +17,10 @@ const ContentSection:FunctionComponent<TSProps> = (props) => {
 	return (
 		<ContentSectionContainer>
             <SectionTitle>{props.title}</SectionTitle>
-            {props.rows.map((row) => 
-                <Row>
+            {props.rows.map((row, rowIndex) => 
+                <Row key={'row'+rowIndex}>
                     {row.map((item) => 
-                        <RowItem>
+                        <RowItem key={item.value}>
                             <Label>{item.label}</Label>
                             <Value>{item.value}</Value>
                         </RowItem>

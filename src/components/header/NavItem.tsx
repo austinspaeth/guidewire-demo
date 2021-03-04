@@ -36,6 +36,12 @@ const NavItemContainer = styled.div((props) => ({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
+    pointerEvents:'all!important',
+    cursor:'pointer',
+    transition:'color .2s ease-in-out',
+    ':hover':{
+        color: props.theme.brand
+    }
 }));
 
 // REDUX MAPPING //

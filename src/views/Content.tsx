@@ -31,9 +31,15 @@ const ContentContainer = styled.div({
     boxSizing:'border-box',
     paddingTop:20,
     display:'flex',
+    paddingBottom:20,
     flexDirection:'column',
     justifyContent:'flex-start',
     alignItems:'center',
+    '@media(max-width:1000px)':{
+        height:'calc(100% - 110px)',
+        width:'100%',
+        top:110,
+    }
 });
 
 // REDUX MAPPING //

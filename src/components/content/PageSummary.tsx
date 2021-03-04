@@ -41,7 +41,7 @@ const PageSummaryContainer = styled.div({
     display:'flex',
     justifyContent:'flex-start',
     alignItems:'center',
-    overflowX:'hidden',
+    overflow:'hidden',
     position:'relative',
 });
 const PageTitle = styled.div((props) => ({

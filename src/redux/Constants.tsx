@@ -1,1 +1,3 @@
 export const SET_THEME = 'SET_THEME';
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
+export const TOGGLE_ACTIONS = 'TOGGLE_ACTIONS';

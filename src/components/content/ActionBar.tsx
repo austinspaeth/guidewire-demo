@@ -2,18 +2,21 @@ import React, {FunctionComponent, useState} from "react";
 
 // REDUX //
 import { connect } from "react-redux";
+import { toggleActions } from '../../redux/Actions';
 
 // COMPONENTS //
 import styled from 'styled-components';
 
 type TSProps = {
-	theme:string
+    actions: boolean,
+	theme:string,
+    toggleActions: Function
 }
 
 const ActionBar:FunctionComponent<TSProps> = (props) => {
 
 	return (
-		<ActionBarContainer>
+		<ActionBarContainer active={props.actions} onClick={() => props.toggleActions(false)}>
             <ActionItem>
                 <ActionIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.1 296.6"><path d="M0,148.1V25.6C0,12.2,8.4,2.4,21.4.2L24.9,0H222.1c11.9,0,22.1,8.1,24.3,19.3a33.3,33.3,0,0,1,.7,7v244c0,15.7-10.6,26.3-26.1,26.3H25.8c-12.4,0-22.7-7.7-25-18.8a32.7,32.7,0,0,1-.8-7.6ZM222.2,25H25V271.7H222.2Z"/><path d="M111.2,98.9h-49c-8.9,0-14.4-7.2-12.3-15.8a12.1,12.1,0,0,1,10-8.6,26,26,0,0,1,4-.3h94.5a20.1,20.1,0,0,1,5.5.5,12.3,12.3,0,0,1-3.1,24.1c-7.2.2-14.5.1-21.7.1Z"/><path d="M111.3,148.3H62.2c-8.9-.1-14.4-7.3-12.3-15.9a12.2,12.2,0,0,1,9.8-8.6,26.8,26.8,0,0,1,4-.2h94.8a19.5,19.5,0,0,1,5.4.6,11.8,11.8,0,0,1,8.9,13.2,12.1,12.1,0,0,1-12,10.8c-8.7.2-17.4.1-26,.1Z"/><path d="M86.4,197.7c-8.1,0-16.1.1-24.2,0s-14.4-7.3-12.3-15.9A12.3,12.3,0,0,1,60,173.2l3.4-.2h46.2c3.6,0,7.1.7,9.9,3.3a12.3,12.3,0,0,1,3.1,13.6c-2.1,4.8-5.9,7.7-11.3,7.8-8.3.1-16.6,0-24.9,0Z"/></ActionIcon>
                 Summary
@@ -51,7 +54,7 @@ const ActionBar:FunctionComponent<TSProps> = (props) => {
 }
 
 // STYLED COMPONENTS //
-const ActionBarContainer = styled.div({
+const ActionBarContainer = styled.div((props) => ({
     marginTop:20,
     paddingTop:15,
     paddingBottom:15,
@@ -63,7 +66,22 @@ const ActionBarContainer = styled.div({
     flexDirection:'column',
     justifyContent:'flex-start',
     alignItems:'center',
-});
+    '@media(max-width:1000px)':{
+        position:'fixed',
+        top:40,
+        right:0,
+        zIndex:3,
+        borderRadius:0,
+        border:'none',
+        borderLeft:'1px solid #CCE0E8',
+        height:'calc(100% - 60px)',
+        transform: props.active ? 'translateX(0%)':'translateX(100%)',
+        transition: 'transform .4s ease-in-out',
+    },
+    '@media(max-width:600px)':{
+        width:'100%',
+    }
+}));
 const ActionItem = styled.div((props) => ({
     width:'calc(100% - 20px)',
     padding:'0px 10px',
@@ -94,13 +112,14 @@ const ActionIcon = styled.svg((props) => ({
 // REDUX MAPPING //
 const mapStateToProps = (state) => {
 	return {
+        actions: state.actions,
 		theme: state.theme
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		
+        toggleActions: (boolean) => dispatch(toggleActions(boolean))
 	};
 };
 

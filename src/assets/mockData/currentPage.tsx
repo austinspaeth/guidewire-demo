@@ -1,4 +1,4 @@
-const currentPage = {
+export const currentPageData = {
     pageTitle:'Policy',
     rowContents:[
         {
@@ -110,5 +110,3 @@ const currentPage = {
         }
     ]
 }
-
-export default currentPage;
