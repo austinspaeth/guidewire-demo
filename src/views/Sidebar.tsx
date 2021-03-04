@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 
 // COMPONENTS //
 import styled from 'styled-components';
+import Search from '../components/sidebar/Search';
+import Navigation from '../components/sidebar/Navigation';
 
 type TSProps = {
 	theme:string
@@ -12,25 +14,29 @@ type TSProps = {
 
 const Sidebar:FunctionComponent<TSProps> = (props) => {
 
-	// STATE //
-	const [ui, setUi] = useState();
-
 	return (
-		<Container>
-		
-		</Container>
+		<SidebarContainer>
+            <Search />
+            <Navigation />
+		</SidebarContainer>
 	)
 }
 
 // STYLED COMPONENTS //
-const Container = styled.div({
-    height: '100%',
-    width: '100%',
+const SidebarContainer = styled.div({
+    height: 'calc(100% - 60px)',
+    width: 350,
+    top:60,
+    padding:20,
+    boxSizing:'border-box',
+    background:'#E4E9EB',
     position:'fixed',
     display:'flex',
-    justifyContent:'center',
+    flexDirection:'column',
+    justifyContent:'flex-start',
     alignItems:'center',
 });
+
 
 // REDUX MAPPING //
 const mapStateToProps = (state) => {
