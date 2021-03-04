@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 // COMPONENTS //
 import styled from 'styled-components';
+import PageSummary from '../../components/content/PageSummary';
 
 type TSProps = {
 	theme:string
@@ -12,24 +13,21 @@ type TSProps = {
 
 const Policy:FunctionComponent<TSProps> = (props) => {
 
-	// STATE //
-	const [ui, setUi] = useState();
-
 	return (
-		<Container>
-		
-		</Container>
+		<>
+            <Row>
+                <PageSummary />
+            </Row>
+            <Row>
+
+            </Row>
+		</>
 	)
 }
 
 // STYLED COMPONENTS //
-const Container = styled.div({
-    height: '100%',
-    width: '100%',
-    position:'fixed',
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
+const Row = styled.div({
+    width:'calc(100% - 40px)',
 });
 
 // REDUX MAPPING //
