@@ -35,10 +35,10 @@ const ButtonContainer = styled.div((props) => ({
     cursor:'pointer',
     transition:'background .2s ease-in-out',
     ':hover':{
-        background:'#d2f1fb'
+        background:'#e3f0f5'
     },
     ':focus':{
-        background:'#d2f1fb'
+        background:'#e3f0f5'
     }
 }));
 
