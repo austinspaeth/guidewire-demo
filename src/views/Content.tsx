@@ -17,19 +17,14 @@ const Content:FunctionComponent<TSProps> = (props) => {
 
 	return (
 		<Container>
-		Test
+		
 		</Container>
 	)
 }
 
 // STYLED COMPONENTS //
 const Container = styled.div({
-    height: '100%',
-    width: '100%',
-    position:'fixed',
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
+
 });
 
 // REDUX MAPPING //
