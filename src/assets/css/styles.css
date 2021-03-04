@@ -1,4 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=block');
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 300;
+	src: url('./fonts/avenir-35.woff') format('woff'), url('./fonts/avenir-35.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/avenir-45.woff') format('woff'), url('./fonts/avenir-45.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 500;
+	src:  url('./fonts/avenir-55.woff') format('woff'), url('./fonts/avenir-55.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 600;
+	src:  url('./fonts/avenir-65.woff') format('woff'), url('./fonts/avenir-65.ttf') format('ttf');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	font-style: normal;
+	font-weight: 800;
+	src:  url('./fonts/avenir-85.woff') format('woff'), url('./fonts/avenir-85.ttf') format('ttf');
+}
 
 html{
 	padding:0px;
@@ -15,7 +48,7 @@ body{
     overflow-y:hidden;
     height:100%;
 	font-family:'Avenir';
-	background:#F9FAFC;
+	background:#F8F9FA;
 }
 
 *{
