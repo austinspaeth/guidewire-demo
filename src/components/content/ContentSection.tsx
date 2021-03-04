@@ -33,7 +33,7 @@ const ContentSection:FunctionComponent<TSProps> = (props) => {
 
 // STYLED COMPONENTS //
 const ContentSectionContainer = styled.section({
-    width:'calc(100% - 250px)',
+    width:'100%',
     display:'flex',
     flexDirection:'column',
     justifyContent:'flex-start',

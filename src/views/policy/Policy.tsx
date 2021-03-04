@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import styled from 'styled-components';
 import PageSummary from '../../components/content/PageSummary';
 import ContentSection from '../../components/content/ContentSection';
+import ActionBar from '../../components/content/ActionBar';
 
 type TSProps = {
     currentPage: any,
@@ -21,11 +22,14 @@ const Policy:FunctionComponent<TSProps> = (props) => {
                 <PageSummary />
             </Row>
             <Row>
-                <Column>
+                <LeftColumn>
                     {props.currentPage.sections.map((section) =>
                         <ContentSection key={section.sectionTitle} title={section.sectionTitle} rows={section.rows} />
                     )}
-                </Column>
+                </LeftColumn>
+                <RightColumn>
+                    <ActionBar />
+                </RightColumn>
             </Row>
 		</>
 	)
@@ -34,8 +38,15 @@ const Policy:FunctionComponent<TSProps> = (props) => {
 // STYLED COMPONENTS //
 const Row = styled.div({
     width:'calc(100% - 40px)',
+    display:'flex',
+    justifyContent:'space-between',
+    alignItems:'flex-start'
 });
-const Column = styled.div({
+const LeftColumn = styled.div({
+    width: 'calc(100% - 270px)'
+});
+const RightColumn = styled.div({
+    width: 250,
 });
 
 // REDUX MAPPING //
